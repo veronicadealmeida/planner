@@ -8,10 +8,10 @@ COPY . .
 RUN apt-get install maven -y
 RUN mvn clean install
 
-FROM openjdk:21
+FROM openjdk:21-jdk-slim
 
-EXPOSE 9082
+EXPOSE 8083
 
-COPY --from=build /target/planner-1.jar app.jar
+COPY --from=build /target/planner-0.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar"]
