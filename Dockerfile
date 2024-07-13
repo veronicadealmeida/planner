@@ -12,6 +12,6 @@ FROM openjdk:21
 
 EXPOSE 9082
 
-COPY --from=build /target/my-assist-0.jar app.jar
+COPY --from=build /target/planner-1.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar"]
